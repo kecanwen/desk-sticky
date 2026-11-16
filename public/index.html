@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>课桌便利贴</title>
+  <meta name="description" content="一块中学课桌上的便利贴墙：用颜色表达时间压力，用揭贴完成任务。" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23e15a4a'/><rect x='5' y='5' width='22' height='22' rx='2' fill='%23f0a04b'/></svg>" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="desk" id="desk">
+    <div class="wood-shine" aria-hidden="true"></div>
+    <div class="pen-groove" aria-hidden="true"></div>
+    <h1 class="desk-title">课桌便利贴</h1>
+
+    <div class="wall" id="wall" aria-label="便利贴墙"></div>
+
+    <button type="button" class="pad" id="newPad" aria-label="撕一张新便利贴">
+      <span class="pad-sheet s3" aria-hidden="true"></span>
+      <span class="pad-sheet s2" aria-hidden="true"></span>
+      <span class="pad-sheet s1">撕一张</span>
+    </button>
+
+    <aside class="drawer" id="drawer">
+      <button type="button" class="drawer-handle" id="drawerToggle" aria-expanded="false" aria-controls="drawerPanel">
+        <span class="handle-bar" aria-hidden="true"></span>
+        <span class="handle-label">抽屉</span>
+      </button>
+      <div class="drawer-panel" id="drawerPanel">
+        <div class="drawer-head">
+          <h2>已经揭下的</h2>
+          <p>还可以再贴回墙上</p>
+        </div>
+        <div class="drawer-list" id="drawerList"></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="modal hidden" id="demoteModal" role="dialog" aria-modal="true" aria-labelledby="demoteTitle">
+    <div class="modal-card">
+      <h2 id="demoteTitle">红贴已经有 3 张了</h2>
+      <p>请先选一张降为橙色或绿色，再把这件事改成红色。</p>
+      <div class="demote-list" id="demoteList"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" id="demoteCancel">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast hidden" id="toast" role="status"></div>
+  <script src="./app.js"></script>
+</body>
+</html>

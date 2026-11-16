@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    container_name: desk-sticky
+    ports:
+      - "5176:80"
+    restart: unless-stopped
